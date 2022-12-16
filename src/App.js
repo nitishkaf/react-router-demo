@@ -6,11 +6,13 @@ import Contact from "./component/contact.page";
 import Homepage from "./component/homepage.page";
 import "./App.css";
 import BookDetails from "./component/BookDetails";
+import { Icons } from "./component/Icon.page";
+import { Nav } from "./component/styles/Button.styled";
 
 const App = () => {
   return (
     <div>
-      <nav>
+      <Nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -22,7 +24,7 @@ const App = () => {
             <Link to="/about">About</Link>
           </li>
         </ul>
-      </nav>
+      </Nav>
 
       <Routes>
         <Route index element={<Homepage />} />
@@ -30,6 +32,7 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="icons" element={<Icons />} />
 
         {/* Dynamic Routing */}
         <Route path="books">
@@ -37,7 +40,7 @@ const App = () => {
           <Route path=":id" element={<BookDetails />} />
         </Route>
       </Routes>
-      <div>Copyright &copy; {new Date().getFullYear()}</div>
+      {/* <div>Copyright &copy; {new Date().getFullYear()}</div> */}
     </div>
   );
 };
